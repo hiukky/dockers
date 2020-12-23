@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  postgres:
+    image: postgres:latest
+    container_name: postgres
+    ports:
+      - ${POSTGRESQL_PORT}:5432
+    restart: always
+    networks:
+      - postgres-net
+    volumes:
+      - ${HOME}.docker/database/postgres/data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRESQL_PASSWORD}
+
+networks:
+  postgres-net:
+    driver: bridge
