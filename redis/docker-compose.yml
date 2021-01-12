@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    networks:
+      - redis-net
+    expose:
+      - 6379
+    volumes:
+      - ${HOME}.docker/cache/redis/data:/data
+
+networks:
+  redis-net:
+    driver: bridge
