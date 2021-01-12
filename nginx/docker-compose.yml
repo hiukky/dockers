@@ -1,0 +1,19 @@
+version: "3.8"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx
+    restart: unless-stopped
+    tty: true
+    networks:
+      - nginx-net
+    volumes:
+      - ${HOME}/.docker/webserver/nginx:/etc/nginx/templates
+    ports:
+      - 80:80
+      - 443:443
+
+networks:
+  nginx-net:
+    driver: bridge
