@@ -1,21 +1,19 @@
 # dockers
 
-Docker image management
+Docker containers management.
 
-## CLI
+### Get starting
+To use the cli you need to have docker installed and plugin compose in version 2! Follow this tutorial for installing the plugin https://docs.docker.com/compose/cli-command.
 
-`make CONTAINER=containerName`
+### CLI
 
-### Flags
+`make CONTAINER=containerName command`
 
-#### up
+### Commands
+Use one of the following commands.
 
-`make CONTAINER=containerName up`
-
-#### down
-
-`make CONTAINER=containerName down`
-
-#### logs
-
-`make CONTAINER=containerName logs`
+|command|description|
+|-|-|
+|`up`|Builds, (re)creates, starts, and attaches to containers for a service.|
+|`down`|Stops containers and removes containers, networks, volumes, and images created by up|
+|`logs`|Displays log output from services.|

@@ -1,5 +1,5 @@
 #!make
-WORKDIR=$(PWD)/$(CONTAINER)
+WORKDIR=$(CURDIR)/$(CONTAINER)
 ENV=$(WORKDIR)/.env
 COMPOSE_FILE=$(WORKDIR)/docker-compose.yml
 
@@ -10,14 +10,14 @@ export
 .PHONY: up
 
 up:
-	docker-compose -f $(COMPOSE_FILE) up -d
+	docker compose -f $(COMPOSE_FILE) up -d
 
 .PHONY: down
 
 down:
-	docker-compose down
+	docker compose down
 
 .PHONY: logs
 
 logs:
-	docker-compose logs -f
+	docker compose logs -f
